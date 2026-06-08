@@ -1,0 +1,251 @@
+\usepackage{graphicx}
+\usepackage{float}
+
+\documentclass[conference]{IEEEtran}
+
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{url}
+\usepackage{float}
+
+\title{Hospital Management System\\
+Database Systems Project Report}
+
+\author{
+\IEEEauthorblockN{Shaista Naseem, Aiman Zubair, Waleed Ahmed}
+\IEEEauthorblockA{
+School of Computing Sciences \\
+Pak-Austria Fachhochschule: Institute of Applied Sciences and Technology \\
+Haripur, Pakistan \\
+Course: Database Systems
+}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Hospital Management Systems are important for maintaining and organizing healthcare information efficiently. Traditional paper-based systems are time-consuming, difficult to manage, and more likely to produce errors in patient records, billing, and appointment scheduling. This project presents a Hospital Management System developed using Python, Flask, HTML, CSS, and SQLite database technologies. The system is designed to manage patients, doctors, appointments, room allocation, and hospital records through a centralized database platform. The project demonstrates the implementation of database concepts such as relational tables, primary keys, foreign keys, normalization, and CRUD operations. The developed system improves healthcare data management by reducing paperwork, increasing efficiency, improving data retrieval speed, and providing secure storage of hospital information.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Hospital Management System, Database Systems, SQLite, Flask, Healthcare Management, Relational Database
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+Healthcare organizations require efficient systems for managing patient records, appointments, billing information, and staff data. Traditional paper-based systems often create difficulties in storing and retrieving information, resulting in delays and increased chances of errors. A computerized Hospital Management System provides a modern solution for handling healthcare operations efficiently.
+
+A Hospital Management System is a database-driven software application that helps hospitals maintain patient records, doctor information, appointments, and administrative tasks digitally \cite{ref1}. The proposed project was developed to demonstrate how database systems can be applied in healthcare environments.
+
+\section{Problem Statement}
+
+Manual hospital management creates several problems including:
+
+\begin{itemize}
+    \item Loss of patient records
+    \item Duplicate information entries
+    \item Delays in retrieving medical data
+    \item Inefficient appointment scheduling
+    \item Billing and administrative errors
+\end{itemize}
+
+The project aims to solve these issues by developing a centralized Hospital Management System using database technologies.
+
+\section{Related Work}
+
+Several healthcare management systems have been developed to improve hospital operations and reduce manual workload. Electronic Health Record systems and healthcare databases are commonly used to improve patient care and hospital efficiency \cite{ref2}. Research in healthcare database systems shows that database-driven applications improve operational efficiency and reduce medical record errors \cite{ref3}.
+
+\section{Objectives}
+
+The main objectives of the project are:
+
+\begin{enumerate}
+    \item To develop a digital Hospital Management System.
+    \item To reduce paperwork and improve data management.
+    \item To manage patients, doctors, and appointments efficiently.
+    \item To implement database concepts practically.
+    \item To improve information retrieval speed.
+\end{enumerate}
+
+\section{Scope and Significance}
+
+The project demonstrates how hospitals can organize their operations using database systems. The significance of the project includes:
+
+\begin{itemize}
+    \item Efficient data organization
+    \item Reduced paperwork
+    \item Faster access to hospital records
+    \item Improved patient management
+\end{itemize}
+
+\section{System Requirements}
+
+\subsection{Hardware Requirements}
+
+\begin{itemize}
+    \item Intel Core i3 or above
+    \item Minimum 4GB RAM
+    \item 500GB Storage
+\end{itemize}
+
+\subsection{Software Requirements}
+
+\begin{itemize}
+    \item Windows Operating System
+    \item Python
+    \item Flask Framework
+    \item SQLite Database
+    \item HTML and CSS
+\end{itemize}
+
+\subsection{Tools and Technologies}
+
+\begin{table}[H]
+\centering
+\caption{Technologies Used}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Technology} & \textbf{Purpose} \\
+\hline
+Python & Backend Development \\
+\hline
+Flask & Web Framework \\
+\hline
+SQLite & Database Management \\
+\hline
+HTML & Frontend Structure \\
+\hline
+CSS & Styling \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Database Tables}
+
+\subsection{Patients Table}
+
+\begin{table}[H]
+\centering
+\caption{Patients Table}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Attribute} & \textbf{Data Type} & \textbf{Constraint} \\
+\hline
+Patient\_ID & Integer & Primary Key \\
+\hline
+Name & Varchar & Not Null \\
+\hline
+Age & Integer & Not Null \\
+\hline
+Gender & Varchar & Not Null \\
+\hline
+Contact & Varchar & Unique \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Doctors Table}
+
+\begin{table}[H]
+\centering
+\caption{Doctors Table}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Attribute} & \textbf{Data Type} & \textbf{Constraint} \\
+\hline
+Doctor\_ID & Integer & Primary Key \\
+\hline
+Doctor\_Name & Varchar & Not Null \\
+\hline
+Specialization & Varchar & Not Null \\
+\hline
+Department & Varchar & Not Null \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Entity Relationship Diagram}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{erd.png}
+    \caption{Entity Relationship Diagram of Hospital Management System}
+    \label{fig:erd}
+\end{figure}
+
+\section{Implementation}
+
+The project was implemented using Python and Flask. SQLite was used as the backend database system for storing hospital information.
+
+The system contains modules including:
+
+\begin{itemize}
+    \item Patient Management
+    \item Doctor Management
+    \item Appointment Scheduling
+    \item Room Management
+    \item Billing System
+\end{itemize}
+
+\section{Normalization}
+
+Normalization was applied to improve database structure and reduce redundancy.
+
+\subsection{First Normal Form (1NF)}
+
+The tables contain atomic values without repeating groups.
+
+\subsection{Second Normal Form (2NF)}
+
+Partial dependencies were removed by separating related data into different tables.
+
+\subsection{Third Normal Form (3NF)}
+
+Transitive dependencies were removed to improve consistency and efficiency.
+
+\section{Challenges and Limitations}
+
+Several challenges were faced during development:
+
+\begin{itemize}
+    \item Designing database relationships
+    \item Managing Flask routing
+    \item Connecting frontend with backend
+    \item Maintaining data consistency
+\end{itemize}
+
+\section{Future Recommendations}
+
+The project can be improved further by adding:
+
+\begin{itemize}
+    \item Online appointment booking
+    \item Email notifications
+    \item Cloud database integration
+    \item Mobile application support
+\end{itemize}
+
+\section{Conclusion}
+
+The Hospital Management System successfully demonstrates the practical implementation of database systems in healthcare management. The project improved understanding of relational databases, normalization, CRUD operations, and web application development.
+
+\begin{thebibliography}{00}
+
+\bibitem{ref1} A. Silberschatz, H. F. Korth, and S. Sudarshan, \textit{Database System Concepts}, 7th ed. New York, NY, USA: McGraw-Hill, 2019.
+
+\bibitem{ref2} R. Elmasri and S. B. Navathe, \textit{Fundamentals of Database Systems}, 7th ed. Boston, MA, USA: Pearson, 2017.
+
+\bibitem{ref3} J. Han, M. Kamber, and J. Pei, \textit{Data Mining: Concepts and Techniques}, 3rd ed. Burlington, MA, USA: Morgan Kaufmann, 2011.
+
+\bibitem{ref4} Flask Documentation, ``Flask Web Framework,'' [Online]. Available: \url{https://flask.palletsprojects.com/}
+
+\bibitem{ref5} SQLite Documentation, ``SQLite Database Engine,'' [Online]. Available: \url{https://www.sqlite.org/}
+
+\end{thebibliography}
+
+\end{document}
